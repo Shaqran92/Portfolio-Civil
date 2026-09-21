@@ -52,10 +52,11 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
+<div class="nav-backdrop" id="nav-backdrop" aria-hidden="true"></div>
 
 <!-- ══════════════════════════════════════════════
      1. HERO
@@ -231,7 +232,7 @@
 
       <!-- 1: Blast paper — Featured -->
       <div class="pub-item featured">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-review">Under Review</span>
         </div>
@@ -250,7 +251,7 @@
 
       <!-- 2: AURJ shear wall -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-pub">Published</span>
         </div>
@@ -271,7 +272,7 @@
 
       <!-- 3: AURJ fly ash -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-pub">Published</span>
         </div>
@@ -292,7 +293,7 @@
 
       <!-- 4: ICSIID LWC -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-conf">Conference</span>
         </div>
@@ -305,7 +306,7 @@
 
       <!-- 5: ICSIID eco bricks -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-conf">Conference</span>
         </div>
@@ -318,7 +319,7 @@
 
       <!-- 6: ICSIID burnt brick -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2025</div>
           <span class="badge badge-conf">Conference</span>
         </div>
@@ -331,7 +332,7 @@
 
       <!-- 7: IMCEET 2024 -->
       <div class="pub-item">
-        <div>
+        <div class="pub-top-meta">
           <div class="pub-year">2024</div>
           <span class="badge badge-pub">Published</span>
         </div>
@@ -433,33 +434,34 @@
           <div class="rvis-card">
             <div class="rvis-card-head">Relative Structural Performance Under Blast Loading</div>
             <div class="rvis-card-body">
-              <div style="display:flex;flex-direction:column;gap:0.65rem;">
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                  <span style="width:80px;font-size:0.78rem;font-weight:600;color:var(--charcoal);text-align:right;">Bare Frame</span>
-                  <div style="flex:1;height:22px;background:var(--steel-light);border-radius:4px;display:flex;align-items:center;padding:0 0.5rem;">
-                    <span style="font-size:0.72rem;color:var(--text-muted);font-style:italic;">Baseline — highest lateral displacement</span>
+              <div class="perf-chart">
+                <div class="perf-row">
+                  <span class="perf-label">Bare Frame</span>
+                  <div class="perf-track perf-baseline-track">
+                    <span class="perf-baseline-text">Baseline — highest lateral displacement</span>
                   </div>
+                  <span class="perf-status"></span>
                 </div>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                  <span style="width:80px;font-size:0.78rem;font-weight:600;color:var(--charcoal);text-align:right;">X-Braced</span>
-                  <div style="flex:1;height:22px;background:var(--steel-light);border-radius:4px;overflow:hidden;">
-                    <div style="height:100%;width:65%;background:linear-gradient(90deg,var(--steel-mid),#4a7ab5);border-radius:4px;"></div>
+                <div class="perf-row">
+                  <span class="perf-label">X-Braced</span>
+                  <div class="perf-track">
+                    <div class="perf-fill" style="width:65%;background:linear-gradient(90deg,var(--steel-mid),#4a7ab5);"></div>
                   </div>
-                  <span style="font-size:0.72rem;color:var(--text-muted);"></span>
+                  <span class="perf-status">Improved</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                  <span style="width:80px;font-size:0.78rem;font-weight:600;color:var(--charcoal);text-align:right;">V-Braced</span>
-                  <div style="flex:1;height:22px;background:var(--steel-light);border-radius:4px;overflow:hidden;">
-                    <div style="height:100%;width:75%;background:linear-gradient(90deg,var(--steel-mid),#4a7ab5);border-radius:4px;"></div>
+                <div class="perf-row">
+                  <span class="perf-label">V-Braced</span>
+                  <div class="perf-track">
+                    <div class="perf-fill" style="width:75%;background:linear-gradient(90deg,var(--steel-mid),#4a7ab5);"></div>
                   </div>
-                  <span style="font-size:0.72rem;color:var(--text-muted);"></span>
+                  <span class="perf-status">Improved</span>
                 </div>
-                <div style="display:flex;align-items:center;gap:0.75rem;">
-                  <span style="width:80px;font-size:0.78rem;font-weight:600;color:var(--charcoal);text-align:right;">K-Braced</span>
-                  <div style="flex:1;height:22px;background:var(--steel-light);border-radius:4px;overflow:hidden;">
-                    <div style="height:100%;width:88%;background:linear-gradient(90deg,var(--amber),#f59e0b);border-radius:4px;"></div>
+                <div class="perf-row">
+                  <span class="perf-label">K-Braced</span>
+                  <div class="perf-track">
+                    <div class="perf-fill" style="width:88%;background:linear-gradient(90deg,var(--amber),#f59e0b);"></div>
                   </div>
-                  <span style="font-size:0.72rem;color:var(--text-muted);"></span>
+                  <span class="perf-status" style="font-weight:600;color:var(--amber-dark);">Best</span>
                 </div>
               </div>
               <p class="bar-note" style="margin-top:0.75rem;">Relative comparison of lateral displacement reduction at the critical frame node. Specific values are withheld pending publication in Scientific Reports. Rankings vary by frame height location.</p>
@@ -663,31 +665,25 @@
     </div>
 
     <!-- Paper viewer -->
-    <div style="margin-top:3rem;" class="fade-up">
-      <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);">
-        <div style="background:var(--navy);padding:1.1rem 1.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-          <h3 style="color:white;font-size:0.95rem;">Read Full Published Papers</h3>
-          <div style="display:flex;gap:0.5rem;">
-            <button class="pdf-tab-btn active" data-pdf="assets/docs/AURJ-2025-22.pdf" data-target="rpdf0"
-              style="padding:0.3rem 0.85rem;font-size:0.76rem;font-weight:600;border-radius:100px;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:var(--amber);color:var(--charcoal);">
-              Fly Ash Beams
-            </button>
-            <button class="pdf-tab-btn" data-pdf="assets/docs/AURJ-2025-25.pdf" data-target="rpdf1"
-              style="padding:0.3rem 0.85rem;font-size:0.76rem;font-weight:600;border-radius:100px;cursor:pointer;border:1.5px solid rgba(255,255,255,0.3);background:transparent;color:rgba(255,255,255,0.75);">
-              Shear Wall Study
-            </button>
-          </div>
+    <div class="pdf-viewer-wrap fade-up">
+      <div class="pdf-viewer-header">
+        <h3>Read Full Published Papers</h3>
+        <div class="pdf-viewer-tabs">
+          <button class="pdf-tab-btn active" data-pdf="assets/docs/AURJ-2025-22.pdf" data-target="rpdf0">
+            Fly Ash Beams
+          </button>
+          <button class="pdf-tab-btn" data-pdf="assets/docs/AURJ-2025-25.pdf" data-target="rpdf1">
+            Shear Wall Study
+          </button>
         </div>
-        <iframe id="rpdf0" class="pdf-frame active" src="assets/docs/AURJ-2025-22.pdf"
-          style="width:100%;height:550px;border:none;display:block;"
-          title="Fly Ash Concrete Beams — Aror University Research Journal 2025"></iframe>
-        <iframe id="rpdf1" class="pdf-frame" src=""
-          style="width:100%;height:550px;border:none;display:none;"
-          title="Shear Wall Structural Performance — Aror University Research Journal 2025"></iframe>
-        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;gap:1rem;flex-wrap:wrap;">
-          <a class="btn btn-outline-dark" href="assets/docs/AURJ-2025-22.pdf" download>⬇ Fly Ash Beams (pp. 01&ndash;05)</a>
-          <a class="btn btn-outline-dark" href="assets/docs/AURJ-2025-25.pdf" download>⬇ Shear Wall Study (pp. 17&ndash;21)</a>
-        </div>
+      </div>
+      <iframe id="rpdf0" class="pdf-frame active" src="assets/docs/AURJ-2025-22.pdf"
+        title="Fly Ash Concrete Beams — Aror University Research Journal 2025"></iframe>
+      <iframe id="rpdf1" class="pdf-frame" src=""
+        title="Shear Wall Structural Performance — Aror University Research Journal 2025"></iframe>
+      <div class="pdf-viewer-footer">
+        <a class="btn btn-outline-dark" href="assets/docs/AURJ-2025-22.pdf" download>⬇ Fly Ash Beams (pp. 01&ndash;05)</a>
+        <a class="btn btn-outline-dark" href="assets/docs/AURJ-2025-25.pdf" download>⬇ Shear Wall Study (pp. 17&ndash;21)</a>
       </div>
     </div>
 
@@ -1039,36 +1035,6 @@
 
 <!-- ── Scripts ── -->
 <script src="main.js"></script>
-
-<!-- Inline fix for PDF iframe toggling (needs inline style toggle) -->
-<script>
-  document.querySelectorAll('.pdf-tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.pdf-tab-btn').forEach(b => {
-        b.style.background = 'transparent';
-        b.style.color = 'rgba(255,255,255,0.75)';
-        b.style.borderColor = 'rgba(255,255,255,0.3)';
-        b.classList.remove('active');
-      });
-      btn.style.background = 'var(--amber)';
-      btn.style.color = 'var(--charcoal)';
-      btn.style.borderColor = 'var(--amber)';
-      btn.classList.add('active');
-      const tid  = btn.dataset.target;
-      const psrc = btn.dataset.pdf;
-      document.querySelectorAll('.pdf-frame').forEach(f => {
-        f.style.display = 'none';
-        f.classList.remove('active');
-      });
-      const frame = document.getElementById(tid);
-      if (frame) {
-        if (!frame.src || frame.src === 'about:blank' || frame.src === window.location.href) frame.src = psrc;
-        frame.style.display = 'block';
-        frame.classList.add('active');
-      }
-    });
-  });
-</script>
 
 </body>
 </html>
